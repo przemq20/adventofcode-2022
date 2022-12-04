@@ -1,11 +1,11 @@
 package day3
 
 import day3.UtilsDay3._
-import utils.AdventSolution
+import utils.AdventSolutionApp
 
-object Rucksacks extends App with AdventSolution[Int] {
+object Rucksacks extends AdventSolutionApp[Int] {
 
-  def resultPart1(input: List[String]) = {
+  def resultPart1(input: List[String]): Int = {
     val tuples = input.map(_.splitStringIntoTwoHalves())
     tuples.map(s => s._1.getSameLetter(s._2)).map(_.countPoints()).sum
   }
@@ -14,8 +14,4 @@ object Rucksacks extends App with AdventSolution[Int] {
     val tuples = input.grouped(3).toList
     tuples.map(s => s.head.getSameLetterPart2(s(1), s(2))).map(_.countPoints()).sum
   }
-
-  val input: List[String] = input(inputFilePath)
-  println(resultPart1(input))
-  println(resultPart2(input))
 }

@@ -1,8 +1,8 @@
 package day1
 
-import utils.AdventSolution
+import utils.AdventSolutionApp
 
-object CalorieCounting extends AdventSolution[Int] {
+object CalorieCounting extends AdventSolutionApp[Int] {
 
   override def input(path: String): List[String] = {
     val source = scala.io.Source.fromFile(path)
@@ -17,12 +17,5 @@ object CalorieCounting extends AdventSolution[Int] {
 
   def resultPart2(input: List[String]): Int = {
     input.map(s => s.split("\n").toList.map(_.toInt).sum).sortWith(_ > _).take(3).sum
-  }
-
-  def main(args: Array[String]): Unit = {
-    val calories = input(inputFilePath)
-
-    println(resultPart1(calories))
-    println(resultPart2(calories))
   }
 }

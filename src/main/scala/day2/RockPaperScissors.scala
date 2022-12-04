@@ -2,9 +2,9 @@ package day2
 
 import day2.Result._
 import day2.Figure._
-import utils.AdventSolution
+import utils.AdventSolutionApp
 
-object RockPaperScissors extends App with AdventSolution[Int] {
+object RockPaperScissors extends AdventSolutionApp[Int] {
 
   case class Battle(enemyFigure: Figure, userFigure: Figure)
 
@@ -30,10 +30,7 @@ object RockPaperScissors extends App with AdventSolution[Int] {
       .map(battle => battle.userFigure.winWith(battle.enemyFigure).points() + battle.userFigure.points())
       .sum
   }
+
   def resultPart1(input: List[String]): Int = calculatePoints(toFigures(input))
   def resultPart2(input: List[String]): Int = calculatePoints(toFiguresTask2(input))
-
-  val input: List[String] = input(inputFilePath)
-  println(resultPart1(input))
-  println(resultPart2(input))
 }

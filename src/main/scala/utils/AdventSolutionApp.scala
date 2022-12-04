@@ -1,6 +1,6 @@
 package utils
 
-trait AdventSolution[T] {
+trait AdventSolutionApp[T] {
   val inputFilePath:     String = s"src/main/resources/${getClass.getPackageName}/input.txt"
   val testInputFilePath: String = s"src/main/resources/${getClass.getPackageName}/test-input.txt"
 
@@ -14,4 +14,10 @@ trait AdventSolution[T] {
   def resultPart1(input: List[String]): T
 
   def resultPart2(input: List[String]): T
+
+  def main(args: Array[String]): Unit = {
+    val lines = input(inputFilePath)
+    println(resultPart1(lines))
+    println(resultPart2(lines))
+  }
 }
