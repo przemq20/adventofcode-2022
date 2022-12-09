@@ -1,4 +1,4 @@
-day=7
+day=8
 mkdir "src/main/scala/day$day"
 mkdir "src/main/resources/day$day"
 touch "src/main/resources/day$day/input.txt"
