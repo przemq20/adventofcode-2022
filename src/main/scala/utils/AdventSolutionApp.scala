@@ -17,7 +17,7 @@ trait AdventSolutionApp[T] {
 
   def main(args: Array[String]): Unit = {
     val lines = input(inputFilePath)
-    println(resultPart1(lines))
-    println(resultPart2(lines))
+    println(s"Part 1 result: ${resultPart1(lines)}")
+    println(s"Part 2 result: ${resultPart2(lines)}")
   }
 }
